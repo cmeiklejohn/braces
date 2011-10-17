@@ -1,0 +1,23 @@
+= Braces
+
+Bootstrap sinatra applications with a minimal template and rspec.
+
+== Usage
+
+Include:
+
+    gem install braces
+
+Run: 
+
+    braces APP_NAME
+
+Voila!
+
+== License
+
+Braces is Copyright © 2011 Christopher Meiklejohn.  It is free software, and may be redistributed under the terms specified in the LICENSE file.
+
+== About
+
+The braces gem was written by {Christopher Meiklejohn}[mailto:cmeiklejohn@swipely.com]
