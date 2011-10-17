@@ -1,35 +1,46 @@
-#!/usr/bin/env ruby -w
+#!/usr/bin/env ruby
 
+$:.push File.expand_path("../../lib", __FILE__)
+
+require 'fileutils'
 require 'optparse'
 require 'methadone'
+require 'methadone/cli'
+require 'braces'
 
+include FileUtils
 include Methadone::Main
+include Methadone::CLI
+include Braces
 
-main do # Add args you want: |like,so|
-  # your program code here
-  # You can access CLI options via
-  # the options Hash
+main do |name|
+  check_and_prepare_basedir!(name,options[:force])
+
+  app_name          = File.basename(name)
+  app_name          = app_name.downcase
+  app_name_constant = app_name.capitalize
+
+  chdir File.dirname(name)
+
+  debug "Creating project for sinatra app #{app_name}"
+
+  mkdir_p app_name
+
+  chdir app_name
+
+  template_dirs_in(:full).each  { |dir| mkdir_p dir }
+
+  ["config.ru", "Gemfile", "Rakefile", "spec/spec_helper.rb"].each do |file|
+    copy_file file, :binding => binding
+  end
+
+  copy_file "lib/application.rb", :as => "#{app_name}.rb", :binding => binding
 end
 
-# supplemental methods here
+description "Braces help you quickly bootstrap a sinatra application."
 
-# Declare command-line interface here
+on("--force","Overwrite files if they exist")
 
-# description "one line description of your app"
-#
-# Accept flags via:
-# on("--flag VAL","Some flag")
-# options[flag] will contain VAL
-#
-# Specify switches via:
-# on("--[no-]switch","Some switch")
-#
-# Or, just call OptionParser methods on opts
-#
-# Require an argument
-# arg :some_arg 
-#
-# # Make an argument optional
-# arg :optional_arg, :optional
+arg :app_name 
 
 go!
