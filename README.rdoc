@@ -2,6 +2,11 @@
 
 Bootstrap sinatra applications with a minimal template and rspec.
 
+== Why?
+
+Isn't Sinatra supposed to be super lightweight and easy to setup?  Yup,
+it is; but it's nice to get everything else for free sometimes.
+
 == Usage
 
 Include:
@@ -16,6 +21,7 @@ Voila!
 
 == What's in the package?
 
+* Bundler
 * Sinatra
 * Thin
 * Shotgun
@@ -27,4 +33,4 @@ Braces is Copyright © 2011 Christopher Meiklejohn.  It is free software, and ma
 
 == About
 
-The braces gem was written by {Christopher Meiklejohn}[mailto:cmeiklejohn@swipely.com]
+The braces gem was written by {Christopher Meiklejohn}[mailto:cmeiklejohn@swipely.com].
