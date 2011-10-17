@@ -1,0 +1,18 @@
+# encoding: UTF-8
+
+ENV["RACK_ENV"] ||= "test"
+
+$LOAD_PATH << File.dirname(__FILE__) + '/lib'
+
+require 'rspec'
+require 'rack/test'
+
+require "<%= app_name %>"
+
+RSpec.configure do |config|
+  config.include(Rack::Test::Methods)
+
+  def app
+    <%= app_name_constant %>.app
+  end
+end

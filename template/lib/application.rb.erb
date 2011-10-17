@@ -1,0 +1,17 @@
+# encoding: UTF-8
+
+require 'rubygems'
+require 'bundler'
+require 'sinatra'
+require 'warden'
+
+module <%= app_name_constant %>
+  class Application < Sinatra::Base
+  end
+
+  def self.app
+    @app ||= Rack::Builder.new do
+      run Application
+    end
+  end
+end
