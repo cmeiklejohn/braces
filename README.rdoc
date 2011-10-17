@@ -34,3 +34,4 @@ Braces is Copyright © 2011 Christopher Meiklejohn.  It is free software, and ma
 == About
 
 The braces gem was written by {Christopher Meiklejohn}[mailto:cmeiklejohn@swipely.com].
+
