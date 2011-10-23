@@ -41,6 +41,6 @@ description "Braces help you quickly bootstrap a sinatra application."
 
 on("--force","Overwrite files if they exist")
 
-arg :app_name 
+arg :name 
 
 go!
