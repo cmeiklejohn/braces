@@ -12,7 +12,7 @@ Feature: Bootstrap a sinatra application
     Then the exit status should be 0
     And the output should contain:
     """
-    Usage: braces [options] app_name
+    Usage: braces [options] name
     
     Braces help you quickly bootstrap a sinatra application.
     

@@ -20,13 +20,9 @@ main do |name|
   app_name          = app_name.downcase
   app_name_constant = app_name.capitalize
 
-  chdir File.dirname(name)
-
-  debug "Creating project for sinatra app #{app_name}"
-
+  chdir   File.dirname(name)
   mkdir_p app_name
-
-  chdir app_name
+  chdir   app_name
 
   template_dirs_in(:full).each  { |dir| mkdir_p dir }
 
@@ -39,7 +35,7 @@ end
 
 description "Braces help you quickly bootstrap a sinatra application."
 
-on("--force","Overwrite files if they exist")
+on("--force",  "Overwrite files if they exist")
 
 arg :name 
 
