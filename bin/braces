@@ -26,7 +26,7 @@ main do |name|
 
   template_dirs_in(:full).each  { |dir| mkdir_p dir }
 
-  ["config.ru", "Gemfile", "Rakefile", "spec/spec_helper.rb"].each do |file|
+  [".rspec", "config.ru", "Gemfile", "Rakefile", "spec/spec_helper.rb"].each do |file|
     copy_file file, :binding => binding
   end
 

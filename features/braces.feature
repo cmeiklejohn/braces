@@ -32,6 +32,7 @@ Feature: Bootstrap a sinatra application
       |tmp/thingy/Rakefile            |
       |tmp/thingy/lib/thingy.rb       |
       |tmp/thingy/spec/spec_helper.rb |
+      |tmp/thingy/.rspec              |
     And the file "tmp/thingy/config.ru" should match /Thingy.app/
     And the file "tmp/thingy/spec/spec_helper.rb" should match /Thingy.app/
     And the file "tmp/thingy/lib/thingy.rb" should match /module Thingy/
